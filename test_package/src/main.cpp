@@ -5,7 +5,7 @@
 #include <iostream>
 
 // Local Includes
-#include <collections/cpp_set.hpp>
+#include <collections/set.hpp>
 
 auto main() -> int {
     std::println(std::cout, "Hello world!");
