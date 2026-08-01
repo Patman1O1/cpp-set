@@ -3,8 +3,8 @@
 #include <gmock/gmock.h>
 
 // Local Includes
-#include <collections/cpp_set.hpp>
+#include <collections/set.hpp>
 
-namespace cpp_set_testing {
+namespace collections::set_testing {
 
-} // namespace cpp_set_testing
+} // namespace collections::set_testing
