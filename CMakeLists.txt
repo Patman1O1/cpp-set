@@ -2,7 +2,7 @@
 # Information
 #-----------------------------------------------------------------------------------------------------------------------
 cmake_minimum_required(VERSION 4.3.0)
-project("cpp_set"
+project("set"
         VERSION 0.1.0
         DESCRIPTION ""
         LANGUAGES CXX
@@ -61,44 +61,44 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_set_headers
-# Alias: collections::cpp_set_headers
+# Target: set_headers
+# Alias: collections::set_headers
 # Type: Interface Library
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cpp_set_headers INTERFACE)
+add_library(set_headers INTERFACE)
 
 # Target alias
-add_library(collections::cpp_set_headers ALIAS cpp_set_headers)
+add_library(collections::set_headers ALIAS set_headers)
 
 # Target headers
-target_include_directories(cpp_set_headers
+target_include_directories(set_headers
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_set
-# Alias: collections::cpp_set
+# Target: set
+# Alias: collections::set
 # Type: Interface Library
-# Dependencies: collections::cpp_set_headers
+# Dependencies: collections::set_headers
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cpp_set INTERFACE)
+add_library(set INTERFACE)
 
 # Target alias
-add_library(collections::cpp_set ALIAS cpp_set)
+add_library(collections::set ALIAS set)
 
 # Target dependencies
-target_link_libraries(cpp_set
+target_link_libraries(set
     INTERFACE
-        collections::cpp_set_headers
+        collections::set_headers
 )
 
 # Target properties
-set_target_properties(cpp_set PROPERTIES
-        OUTPUT_NAME cpp_set
+set_target_properties(set PROPERTIES
+        OUTPUT_NAME set
         VERSION ${PROJECT_VERSION}
         SOVERSION ${PROJECT_VERSION_MAJOR}
         CXX_VISIBILITY_PRESET hidden
@@ -107,11 +107,11 @@ set_target_properties(cpp_set PROPERTIES
 
 if(NOT CMAKE_SKIP_INSTALL_RULES)
     # Install cpp_set
-    install(TARGETS cpp_set
-            RUNTIME COMPONENT cpp_set
-            LIBRARY COMPONENT cpp_set
-            NAMELINK_COMPONENT cpp_set
-            ARCHIVE COMPONENT cpp_set
+    install(TARGETS set
+            RUNTIME COMPONENT set
+            LIBRARY COMPONENT set
+            NAMELINK_COMPONENT set
+            ARCHIVE COMPONENT set
             INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 endif()
 
